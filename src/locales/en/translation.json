@@ -1,0 +1,25 @@
+{
+  "common": {
+    "welcome": "Welcome to Student Portal",
+    "getStarted": "Get Started",
+    "goToDashboard": "Go to Dashboard",
+    "features": "Features",
+    "interactiveLearning": "Interactive Learning",
+    "regularAssessments": "Regular Assessments",
+    "stayUpdated": "Stay Updated",
+    "description": {
+      "interactiveLearning": "Engage with interactive quizzes and real-time feedback",
+      "regularAssessments": "Track your progress with regular quizzes and assignments",
+      "stayUpdated": "Never miss important announcements and deadlines"
+    }
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "quizzes": "Quizzes",
+    "announcements": "Announcements",
+    "courses": "Courses",
+    "schedule": "Schedule",
+    "gradebook": "Gradebook",
+    "profile": "Profile"
+  }
+} 

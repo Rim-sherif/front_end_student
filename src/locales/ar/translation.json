@@ -1,0 +1,25 @@
+{
+  "common": {
+    "welcome": "مرحباً بك في بوابة الطالب",
+    "getStarted": "ابدأ الآن",
+    "goToDashboard": "الذهاب إلى لوحة التحكم",
+    "features": "المميزات",
+    "interactiveLearning": "التعلم التفاعلي",
+    "regularAssessments": "التقييمات المنتظمة",
+    "stayUpdated": "ابق على اطلاع",
+    "description": {
+      "interactiveLearning": "تفاعل مع الاختبارات التفاعلية والتغذية الراجعة الفورية",
+      "regularAssessments": "تتبع تقدمك من خلال الاختبارات والواجبات المنتظمة",
+      "stayUpdated": "لا تفوت الإعلانات المهمة والمواعيد النهائية"
+    }
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "quizzes": "الاختبارات",
+    "announcements": "الإعلانات",
+    "courses": "الدورات",
+    "schedule": "الجدول",
+    "gradebook": "سجل الدرجات",
+    "profile": "الملف الشخصي"
+  }
+} 
