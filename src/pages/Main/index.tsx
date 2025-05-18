@@ -1,4 +1,14 @@
-import { Box, Divider, List, ListItem, ListItemText, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import bg2 from "../../assets/Backpack.png";
 import welcome from "../../assets/College Student.png";
@@ -6,91 +16,114 @@ import bg1 from "../../assets/Scholarcap scroll.png";
 
 const Main: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{ 
-      display: 'grid',
-      gridTemplateColumns: {
-        xs: '1fr',
-        sm: 'repeat(2, 1fr)',
-        md: 'repeat(4, 1fr)'
-      },
-      gridTemplateRows: 'auto',
-      gap: 3,
-      
-    }}>
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "1fr",
+          sm: "repeat(2, 1fr)",
+          md: "repeat(4, 1fr)",
+        },
+        gridTemplateRows: "auto",
+        gap: 3,
+      }}
+    >
       {/* Header Section - Spans all columns */}
-      <Box sx={{ 
-        gridColumn: {
-          xs: '1',
-          sm: '1 / -1'
-        }
-      }}>
+      <Box
+        sx={{
+          gridColumn: {
+            xs: "1",
+            sm: "1 / -1",
+          },
+        }}
+      >
         <Paper
           elevation={3}
           sx={{
             display: "flex",
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             alignItems: "center",
             borderRadius: 4,
-            background: "linear-gradient(180deg, #925FE2 50%, #925FE2 100%)",
+            background: "linear-gradient(180deg, #925FE2 0%, #7D4EDC 100%)",
+            px: { xs: 3, md: 5 },
+            
             position: "relative",
             overflow: "hidden",
-            p: { xs: 2, md: 4 }
           }}
         >
-          <Box sx={{ position: "relative", zIndex: 1, color: "white", textAlign: { xs: 'center', md: 'left' } }}>
-            <Typography variant="h4" gutterBottom>
-              Welcome back, Kareem!
-            </Typography>
-            <Typography variant="body2">
-              Access your courses, track progress, and manage everything from one place.
-            </Typography>
-          </Box>
+          {/* Left Section: Text */}
           <Box
             sx={{
               position: "relative",
-              zIndex: 1,
+              zIndex: 2,
+              color: "white",
+              textAlign: { xs: "center", md: "left" },
+              maxWidth: { xs: "100%", md: "50%" },
+            }}
+          >
+            <Typography variant="h4" fontWeight="bold" gutterBottom>
+              Welcome back, Reem!
+            </Typography>
+            <Typography variant="body1">
+              Access your courses, track progress, and manage everything from
+              one place.
+            </Typography>
+          </Box>
+
+          {/* Right Section: Image & Background Effects */}
+          <Box
+            sx={{
+              position: "relative",
+              zIndex: 2,
+              mt: { xs: 4, md: 0 },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mt: { xs: 2, md: 0 },
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                width: { xs: 150, md: 250 },
-                height: { xs: 150, md: 250 },
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundImage: `url(${bg1})`,
-                bottom: { xs: -50, md: -100 },
-                right: { xs: 70, md: 140 },
-                zIndex: 0,
-              },
-              "&::after": {
-                content: '""',
-                position: "absolute",
-                width: { xs: 50, md: 100 },
-                height: { xs: 50, md: 100 },
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundImage: `url(${bg2})`,
-                right: { xs: 5, md: 10 },
-                top: 0,
-                zIndex: 0,
-              },
             }}
           >
             <img
               src={welcome}
               alt="Welcome"
               style={{
-                width: isMobile ? '120px' : '180px',
-                marginRight: isMobile ? '20px' : '40px',
-                zIndex: 1,
+                width: isMobile ? "120px" : "180px",
+                zIndex: 2,
                 position: "relative",
+              }}
+            />
+
+            {/* Background Layer 1 */}
+            <Box
+              sx={{
+                content: '""',
+                position: "absolute",
+                width: { xs: 150, md: 250 },
+                height: { xs: 150, md: 250 },
+                backgroundImage: `url(${bg1})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                bottom: { xs: -20, md: -80 },
+                right: { xs: 40, md: 100 },
+                zIndex: 1,
+              }}
+            />
+
+            {/* Background Layer 2 */}
+            <Box
+              sx={{
+                content: '""',
+                position: "absolute",
+                width: { xs: 50, md: 100 },
+                height: { xs: 50, md: 100 },
+                backgroundImage: `url(${bg2})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                top: 20,
+                right: { xs: 5, md: -20 },
+                zIndex: 0,
               }}
             />
           </Box>
@@ -98,33 +131,39 @@ const Main: React.FC = () => {
       </Box>
 
       {/* Finance Section */}
-      <Box sx={{ 
-        gridColumn: {
-          xs: '1',
-          sm: '1',
-          md: '1'
-        }
-      }}>
-        <Paper elevation={3} sx={{ 
-          p: 3, 
-          borderRadius: 3, 
-          height: "100%",
-          position: 'relative',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+      <Box
+        sx={{
+          gridColumn: {
+            xs: "1",
+            sm: "1",
+            md: "1",
+          },
+        }}
+      >
+        <Paper
+          elevation={3}
+          sx={{
+            p: 3,
             borderRadius: 3,
-            padding: '2px',
-            background: 'linear-gradient(45deg, #925FE2, #7B2CBF)',
-            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
-          }
-        }}>
+            height: "100%",
+            position: "relative",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 3,
+              padding: "2px",
+              background: "linear-gradient(45deg, #925FE2, #7B2CBF)",
+              WebkitMask:
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "xor",
+              maskComposite: "exclude",
+            },
+          }}
+        >
           <Typography variant="h6" gutterBottom>
             Finance
           </Typography>
@@ -136,33 +175,39 @@ const Main: React.FC = () => {
       </Box>
 
       {/* Courses Section */}
-      <Box sx={{ 
-        gridColumn: {
-          xs: '1',
-          sm: '2',
-          md: '2'
-        }
-      }}>
-        <Paper elevation={3} sx={{ 
-          p: 3, 
-          borderRadius: 3, 
-          height: "100%",
-          position: 'relative',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+      <Box
+        sx={{
+          gridColumn: {
+            xs: "1",
+            sm: "2",
+            md: "2",
+          },
+        }}
+      >
+        <Paper
+          elevation={3}
+          sx={{
+            p: 3,
             borderRadius: 3,
-            padding: '2px',
-            background: 'linear-gradient(45deg, #925FE2, #7B2CBF)',
-            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
-          }
-        }}>
+            height: "100%",
+            position: "relative",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 3,
+              padding: "2px",
+              background: "linear-gradient(45deg, #925FE2, #7B2CBF)",
+              WebkitMask:
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "xor",
+              maskComposite: "exclude",
+            },
+          }}
+        >
           <Typography variant="h6" gutterBottom>
             Courses
           </Typography>
@@ -174,33 +219,39 @@ const Main: React.FC = () => {
       </Box>
 
       {/* Instructors Section */}
-      <Box sx={{ 
-        gridColumn: {
-          xs: '1',
-          sm: '1',
-          md: '3'
-        }
-      }}>
-        <Paper elevation={3} sx={{ 
-          p: 3, 
-          borderRadius: 3, 
-          height: "100%",
-          position: 'relative',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+      <Box
+        sx={{
+          gridColumn: {
+            xs: "1",
+            sm: "1",
+            md: "3",
+          },
+        }}
+      >
+        <Paper
+          elevation={3}
+          sx={{
+            p: 3,
             borderRadius: 3,
-            padding: '2px',
-            background: 'linear-gradient(45deg, #925FE2, #7B2CBF)',
-            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
-          }
-        }}>
+            height: "100%",
+            position: "relative",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 3,
+              padding: "2px",
+              background: "linear-gradient(45deg, #925FE2, #7B2CBF)",
+              WebkitMask:
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "xor",
+              maskComposite: "exclude",
+            },
+          }}
+        >
           <Typography variant="h6" gutterBottom>
             Instructors
           </Typography>
@@ -212,32 +263,37 @@ const Main: React.FC = () => {
       </Box>
 
       {/* Announcements Section */}
-      <Box sx={{ 
-        gridColumn: {
-          xs: '1',
-          sm: '2',
-          md: '4'
-        },
-        gridRow: {
-          xs: 'auto',
-          md: '2 / span 4'
-        }
-      }}>
-        <Paper elevation={3} sx={{ 
-          p: 3, 
-          borderRadius: 3, 
-          height: "100%",
-          position: 'relative',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+      <Box
+        sx={{
+          gridColumn: {
+            xs: "1",
+            sm: "2",
+            md: "4",
+          },
+          gridRow: {
+            xs: "auto",
+            md: "2 / span 4",
+          },
+        }}
+      >
+        <Paper
+          elevation={3}
+          sx={{
+            p: 3,
             borderRadius: 3,
-          }
-        }}>
+            height: "100%",
+            position: "relative",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 3,
+            },
+          }}
+        >
           <Typography variant="h6" gutterBottom color="primary">
             Recent Announcements
           </Typography>
@@ -267,33 +323,38 @@ const Main: React.FC = () => {
       </Box>
 
       {/* Due Items Section */}
-      <Box sx={{ 
-        gridColumn: {
-          xs: '1',
-          sm: '1 / span 2',
-          md: '1 / span 3'
-        },
-        gridRow: {
-          xs: 'auto',
-          md: '3 / span 3'
-        }
-      }}>
-        <Paper elevation={3} sx={{ 
-          p: 3, 
-          borderRadius: 3, 
-          height: "100%", 
-          marginTop: { xs: 0, md: 6 },
-          position: 'relative',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+      <Box
+        sx={{
+          gridColumn: {
+            xs: "1",
+            sm: "1 / span 2",
+            md: "1 / span 3",
+          },
+          gridRow: {
+            xs: "auto",
+            md: "3 / span 3",
+          },
+        }}
+      >
+        <Paper
+          elevation={3}
+          sx={{
+            p: 3,
             borderRadius: 3,
-          }
-        }}>
+            height: "100%",
+            marginTop: { xs: 0, md: 6 },
+            position: "relative",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 3,
+            },
+          }}
+        >
           <Typography variant="h6" gutterBottom>
             Upcoming Due Items
           </Typography>

@@ -19,6 +19,10 @@ import {
   Typography
 } from '@mui/material';
 import React, { useState } from 'react';
+import img1 from '../../assets/react-basics.webp';
+import img2 from '../../assets/ui-ux.webp';
+import img3 from '../../assets/video-editing.png';
+import img4 from '../../assets/nodejs-mastery.webp';
 
 
 // Mock data for courses
@@ -29,7 +33,7 @@ const mockCourses = [
     instructor: 'Dr. Sarah Johnson',
     students: 120,
     duration: '8 weeks',
-    image: 'https://source.unsplash.com/random/300x200?web-development',
+    image: img1,
     category: 'Programming',
   },
   {
@@ -38,7 +42,7 @@ const mockCourses = [
     instructor: 'Prof. Michael Brown',
     students: 85,
     duration: '12 weeks',
-    image: 'https://source.unsplash.com/random/300x200?mathematics',
+    image: img2,
     category: 'Mathematics',
   },
   {
@@ -47,7 +51,7 @@ const mockCourses = [
     instructor: 'Dr. Emily Chen',
     students: 150,
     duration: '10 weeks',
-    image: 'https://source.unsplash.com/random/300x200?data-science',
+    image: img3,
     category: 'Data Science',
   },
   {
@@ -56,7 +60,7 @@ const mockCourses = [
     instructor: 'Prof. James Wilson',
     students: 95,
     duration: '6 weeks',
-    image: 'https://source.unsplash.com/random/300x200?business',
+    image: img4,
     category: 'Business',
   },
 ];

@@ -25,8 +25,8 @@ import logo from '../../assets/Frame 47.png';
 
 // Mock user data
 const userData = {
-  name: 'Kareem Hassan',
-  email: 'kareem@example.com',
+  name: 'Reem Sherif',
+  email: 'Reem@example.com',
   role: 'Student',
   phone: '+1 (555) 123-4567',
   location: 'New York, USA',
